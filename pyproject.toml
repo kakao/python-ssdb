@@ -5,7 +5,9 @@ description = "Python implementation of SSDB client"
 authors = ["recoteam <recoteam@kakaocorp.com>"]
 readme = "README.md"
 repository = "https://github.com/kakao/python-ssdb"
-packages = [{include = "ssdb"}]
+license = "Apache2"
+packages = [{ include = "ssdb" }]
+include = [{ path = "ssdb/**/*.so", format = "wheel" }]
 
 [tool.poetry.build]
 script = "build_extension.py"
@@ -22,24 +24,20 @@ poethepoet = "^0.18.1"
 [tool.poe.tasks]
   [tool.poe.tasks.isort]
   help = "Run isort on the code base"
-  cmd  = "isort --profile black . -p=ssdb --skip=3rd/ --skip=build/ --skip=.pyx"
+  cmd  = "isort --profile black ssdb/ -p=ssdb --skip=3rd/ --skip=build/ --skip=.pyx"
 
   [tool.poe.tasks.black]
   help = "Run black on the code base"
-  cmd  = "black . --check"
-
-  [tool.poe.tasks.flake8-py]
-  help = "Run flake8 on the code base"
-  cmd = "flake8 . --filename='*.py' --ignore=E402,E501,E731,E741 --exclude=setup.py"
+  cmd  = "black ssdb/"
 
   [tool.poe.tasks.flake8-pyx]
   help = "Run flake8 on the code base"
-  cmd = "flake8 . --filename='*.pyx' --ignore=E225,E226,E227,E402,E501,E741,E901,E999"
+  cmd = "flake8 ssdb/ --filename='*.pyx' --ignore=E225,E226,E227,E402,E501,E741,E901,E999"
 
   [tool.poe.tasks.lint]
   help = "Run linting tools on the code base"
-  sequence  = ["isort", "black", "flake8-py", "flake8-pyx"]
+  sequence  = ["isort", "black", "flake8-pyx"]
 
 [build-system]
-requires = ["poetry-core", "Cython", "setuptools"]
+requires = ["poetry-core>=1.0.0", "Cython", "setuptools"]
 build-backend = "poetry.core.masonry.api"
