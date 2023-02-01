@@ -34,12 +34,15 @@ class SSDB(SSDBInterface):
         self.single_connection_client = single_connection_client
 
     def __del__(self) -> None:
-        loop = asyncio.get_event_loop()
-        coro = self.close()
-        if loop.is_running():
-            loop.create_task(coro)
-        else:
-            loop.run_until_complete(coro)
+        try:
+            loop = asyncio.get_event_loop()
+            coro = self.close()
+            if loop.is_running():
+                loop.create_task(coro)
+            else:
+                loop.run_until_complete(coro)
+        except:
+            pass
 
     def __repr__(self) -> str:
         return f"{self.__class__.__name__}<{repr(self.connection_pool)}>"
