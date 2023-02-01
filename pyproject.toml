@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python-ssdb"
-version = "v1.0.2"
+version = "v1.0.3"
 description = "SSDB Python Client"
 authors = ["recoteam <recoteam@kakaocorp.com>"]
 readme = "README.md"
