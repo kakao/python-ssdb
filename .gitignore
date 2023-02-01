@@ -4,3 +4,4 @@ __pycache__/
 ssdb.egg-info/
 setup.py
 *.c
+*.so
