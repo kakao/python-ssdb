@@ -1,7 +1,6 @@
 dist/
 build/
+*.egg-info/
 __pycache__/
-ssdb.egg-info/
-setup.py
 *.c
 *.so
