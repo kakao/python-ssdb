@@ -57,8 +57,10 @@ setup(
     license="Apache2",
     keywords="SSDB",
     classifiers=[
-        "License :: Apache Software License",
-        "Operating System :: Linux",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: POSIX :: Linux",
+        "Operating System :: MacOS :: MacOS X",
+        "Operating System :: Microsoft :: Windows",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
