@@ -1,6 +1,6 @@
 [project]
 name = "python-ssdb"
-version = "v1.0.4"
+version = "1.0.4"
 description = "SSDB Python Client"
 requires-python = ">=3.9"
 authors = [{name = "recoteam", email = "recoteam@kakaocorp.com"}]
