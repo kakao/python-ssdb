@@ -47,7 +47,7 @@ def read(file_name):
 
 setup(
     name="python-ssdb",
-    version="1.0.4rc0",
+    version="1.0.4rc1",
     description="SSDB Python Client",
     long_description=read("README.md"),
     python_requires=">3.9",
