@@ -47,10 +47,10 @@ def read(file_name):
 
 setup(
     name="python-ssdb",
-    version="1.0.4",
+    version="1.0.5",
     description="SSDB Python Client",
     long_description=read("README.md"),
-    python_requires=">3.9",
+    python_requires=">=3.9",
     author="recoteam",
     author_email="recoteam@kakaocorp.com",
     url="https://github.com/kakao/python-ssdb",
